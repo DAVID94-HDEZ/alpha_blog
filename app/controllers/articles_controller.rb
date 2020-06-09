@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
 
   def    show
-      article = Article.find(params[:id])
+      @article = Article.find(params[:id])
   end
 
   # before_action :set_article, only: [:show, :edit, :update, :destroy]
