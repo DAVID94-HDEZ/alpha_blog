@@ -13,7 +13,8 @@ class ArticlesController < ApplicationController
   end
 
   def create
-      render plain: params[:article]
+      @article = Article.new(params.require(:article).permit(:title, :description))
+      @article.save
   end
 
   # before_action :set_article, only: [:show, :edit, :update, :destroy]
