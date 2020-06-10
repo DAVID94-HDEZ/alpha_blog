@@ -9,16 +9,45 @@ class ArticlesController < ApplicationController
   end
 
   def new
+    @article = Article.new
+  end
 
+  def edit
+    @article = Article.find(params[:id])
   end
 
   def create
       @article = Article.new(params.require(:article).permit(:title, :description))
-      @article.save
-      redirect_to (@article) 
+    if @article.save
+      flash[:notice] = "Article was successfully saved"
+      redirect_to (@article)
       # Si se utiliza articles_path en el navegador despues de guardar
       # te redirecciona directo a la lista para visualizar lo guardado.
+    else
+      render 'new'
+    end
   end
+
+  def update
+    @article = Article.find(params[:id])
+      if @article.update(params.require(:article).permit(:title, :description))
+        flash[:notice] = "Article was updated successfully"
+        redirect_to @article
+      else
+        render 'edit'
+    end    
+  end
+  # def update
+  #   respond_to do |format|
+  #     if @article.update(article_params)
+  #       format.html { redirect_to @article, notice: 'Article was successfully updated.' }
+  #       format.json { render :show, status: :ok, location: @article }
+  #     else
+  #       format.html { render :edit }
+  #       format.json { render json: @article.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
   # before_action :set_article, only: [:show, :edit, :update, :destroy]
 
