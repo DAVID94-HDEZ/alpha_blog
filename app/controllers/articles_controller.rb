@@ -15,6 +15,9 @@ class ArticlesController < ApplicationController
   def create
       @article = Article.new(params.require(:article).permit(:title, :description))
       @article.save
+      redirect_to (@article) 
+      # Si se utiliza articles_path en el navegador despues de guardar
+      # te redirecciona directo a la lista para visualizar lo guardado.
   end
 
   # before_action :set_article, only: [:show, :edit, :update, :destroy]
