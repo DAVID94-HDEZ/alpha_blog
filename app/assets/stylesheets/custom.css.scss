@@ -1,0 +1,26 @@
+@import 'bootstrap/dist/css/bootstrap';
+
+.navbar {
+  background-color: #000607 !important;
+}
+
+.nav-link {
+  color: white !important;
+}
+
+#logo {
+  float: left;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: lighter;
+}
+
+#home-container {
+  margin-top: 25px;
+}
+
+.jumbotron {
+  background-image: asset-url('workout.jpg')
+}
