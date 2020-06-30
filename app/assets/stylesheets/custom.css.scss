@@ -1,11 +1,11 @@
 @import 'bootstrap/dist/css/bootstrap';
 
-.navbar {
-  background-color: #000607 !important;
+.navbar{
+    background-color: black !important;
 }
 
-.nav-link {
-  color: white !important;
+.nav-link{
+    color: white !important;
 }
 
 #logo {
@@ -14,7 +14,7 @@
   color: #fff;
   text-transform: uppercase;
   letter-spacing: -1px;
-  font-weight: lighter;
+  font-weight: normal;
 }
 
 #home-container {
@@ -22,5 +22,22 @@
 }
 
 .jumbotron {
-  background-image: asset-url('workout.jpg')
+  background-image: asset-url('joshua-jordan-ZfiV8EgglsY-unsplash.jpg');
+  background-position: center center;
+  background-repeat: no - repeat;
+  background-size: cover;
+  height: 480px;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+#page-content {
+  flex: 1 0 auto;
+}
+
+#sticky-footer {
+  flex-shrink: none;
 }
